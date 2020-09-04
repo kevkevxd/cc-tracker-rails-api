@@ -11,4 +11,7 @@ require 'rest-client'
 require 'json'
 require 'pry'
 
-
+a = ENV["cc"]
+cc_api_data = RestClient.get(a)
+cc_info = JSON.parse(cc_api_data)
+ccstack = ENV["ccstack"]
