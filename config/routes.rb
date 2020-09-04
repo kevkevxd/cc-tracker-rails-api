@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_perks
+  resources :cc_perks
   resources :perks
   resources :credit_cards
   resources :users

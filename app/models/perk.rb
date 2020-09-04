@@ -1,4 +1,6 @@
 class Perk < ApplicationRecord
-    belongs_to :credit_card
-    # belongs_to: user?
+    has_many :cc_perks
+    has_many :credit_cards, through: :cc_perks
+    has_many :user_perks
+    has_many :users, through: :user_perks
 end
