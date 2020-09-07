@@ -1,2 +1,0 @@
-class UserPerksController < ApplicationController
-end

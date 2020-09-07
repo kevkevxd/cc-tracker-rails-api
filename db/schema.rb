@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_211900) do
+ActiveRecord::Schema.define(version: 2020_09_06_033803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cc_perks", force: :cascade do |t|
-    t.integer "credit_card_id"
-    t.integer "perk_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "credit_cards", force: :cascade do |t|
-    t.string "card_name"
+    t.integer "user_id"
+    t.string "name"
     t.integer "annual_fee"
-    t.date "approval_date"
+    t.string "approval_date"
     t.integer "bonus_amount"
     t.integer "bonus_spend"
     t.string "bonus_month_period"
@@ -33,12 +27,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_211900) do
     t.string "earn_description"
     t.integer "category"
     t.string "bank_name"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "perks", force: :cascade do |t|
     t.boolean "insurance"
     t.boolean "price_protection"
     t.boolean "return_protection"
@@ -47,14 +35,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_211900) do
     t.boolean "global_entry"
     t.boolean "lounge_access"
     t.text "notes"
-    t.integer "credit_card_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "user_perks", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "perk_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,2 +1,0 @@
-class CcPerksController < ApplicationController
-end
