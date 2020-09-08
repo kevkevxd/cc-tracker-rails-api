@@ -12,8 +12,9 @@ require 'json'
 require 'pry'
 
 
-CreditCard.destroy_all
 User.destroy_all
+CreditCard.destroy_all
+UserCreditCard.destroy_all
 # search_url= "https://api.ccstack.io/v1/search/banks?api_key="
 # count = 1
 # base_url = "https://api.ccstack.io/v1/discover/cards?page=#{count}&api_key="
@@ -45,7 +46,6 @@ while CreditCard.all.length < 2 do
         
         json_rewards = cc["rewards"].to_json
         CreditCard.create(
-            user_id: User.first.id,
             name: cc["original_title"],
             annual_fee: cc["fee"],
             category: cc["rewards_type"],
@@ -61,6 +61,9 @@ while CreditCard.all.length < 2 do
         count += 1
 end
 
+10.times do
+UserCreditCard.create(user_id: User.all.sample.id, credit_card_id: CreditCard.all.sample.id)
+end
 # puts "seeded"
 
 
