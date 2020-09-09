@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_200532) do
 
   create_table "credit_cards", force: :cascade do |t|
     t.string "name"
+    t.boolean "is_bookedmarked"
     t.integer "annual_fee"
     t.string "approval_date"
     t.integer "bonus_amount"

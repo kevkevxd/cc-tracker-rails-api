@@ -32,7 +32,7 @@ class CreditCardsController < ApplicationController
     end
 
     def credit_card_params
-        params.require(:credit_card).permit(:name, :annual_fee, :approval_date, :bonus_amount, :bonus_spend, :bonus_month_period, :percentage_earn, :earn_description, :category, :bank_name, :insurance, :price_protection, :return_protection, :extended_warranty, :travel_credit, :global_entry, :lounge_access, :notes)
+        params.require(:credit_card).permit(:name, :is_bookedmarked, :annual_fee, :approval_date, :bonus_amount, :bonus_spend, :bonus_month_period, :percentage_earn, :earn_description, :category, :bank_name, :insurance, :price_protection, :return_protection, :extended_warranty, :travel_credit, :global_entry, :lounge_access, :notes)
     end
 
 end
