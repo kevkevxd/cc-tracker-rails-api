@@ -28,7 +28,7 @@ class CreditCardsController < ApplicationController
     private
 
     def find_credit_card
-        credit_card = CreditCard.find(param[:id])
+        credit_card = CreditCard.find(params[:id])
     end
 
     def credit_card_params
