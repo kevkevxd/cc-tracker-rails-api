@@ -35,4 +35,3 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:name, :accrued_points, :accrued_cash, :point_expirations)  
     end
-end
