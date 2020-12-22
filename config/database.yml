@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: cc-tracker-rails-api
+  database: postgres
   host: localhost
   username: <%= ENV['POSTGRES_USERNAME'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: cc-tracker-rails-api
+  database: postgres
   host: localhost
   username: <%= ENV['POSTGRES_USERNAME'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
