@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 2020_09_08_200532) do
     t.integer "annual_fee"
     t.string "approval_date", default: "0"
     t.integer "bonus_amount", default: 0
+    t.string "reward_name"
     t.integer "bonus_spend"
     t.string "bonus_month_period"
     t.integer "percentage_earn"
-    t.string "earn_description"
+    t.text "earn_description", default: [], array: true
     t.integer "category"
     t.string "bank_name"
     t.boolean "insurance", default: false, null: false
